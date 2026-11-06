@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Bánh Mì Ngôn Ngữ — Học ngoại ngữ mỗi ngày, không áp lực</title>
+  
+  <meta name="description" content="Bánh Mì Ngôn Ngữ giúp sinh viên mất gốc tự học tiếng Anh, Trung, Nhật, Hàn: kiểm tra trình độ thật, lộ trình cá nhân hóa, thẻ ghi nhớ ôn tập ngắt quãng, thư viện ngữ pháp và bạn luyện nói AI mỗi ngày 5–10 phút.">
+  <meta name="theme-color" content="#FBF6EE">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Bánh Mì Ngôn Ngữ">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Fonts: Be Vietnam Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Mobile Top Bar -->
+  <header class="mobile-top-bar">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <img src="assets/logo.svg" alt="Bánh Mì Logo" style="width: 34px; height: 34px;">
+      <span style="font-weight: 800; font-size: 16px; color: var(--primary);">Bánh Mì</span>
+    </div>
+
+    <div style="display: flex; gap: 8px;">
+      <button class="btn-icon" id="themeToggleBtnMobile" title="Đổi giao diện sáng/tối" style="width: 36px; height: 36px;">
+        🌓
+      </button>
+      <button class="pill pill-primary" id="langSelectBtnMobile" style="font-size: 12px; padding: 4px 10px;">
+        🌐 Ngôn ngữ
+      </button>
+    </div>
+  </header>
+
+  <!-- App Main Layout Container -->
+  <div class="app-container">
+    <!-- Desktop Sidebar -->
+    <aside class="app-sidebar">
+      <div class="brand-badge">
+        <img src="assets/logo.svg" alt="Bánh Mì Ngôn Ngữ Logo">
+        <div>
+          <h1>Bánh Mì Ngôn Ngữ</h1>
+          <span>Không áp lực · Học 5 phút</span>
+        </div>
+      </div>
+
+      <nav class="nav-group">
+        <button class="nav-item active" data-route="dashboard">
+          <span class="icon">🏠</span>
+          <span>Trang chủ</span>
+        </button>
+
+        <button class="nav-item" data-route="roadmap">
+          <span class="icon">🗺️</span>
+          <span>Lộ trình học (9 bài)</span>
+        </button>
+
+        <button class="nav-item" data-route="flashcards">
+          <span class="icon">📇</span>
+          <span>Sổ thẻ ngắt quãng</span>
+        </button>
+
+        <button class="nav-item" data-route="speaking">
+          <span class="icon">🎙️</span>
+          <span>Luyện nói cùng AI</span>
+          <span class="nav-badge">Voice</span>
+        </button>
+
+        <button class="nav-item" data-route="library">
+          <span class="icon">📖</span>
+          <span>Thư viện & Bảng IPA</span>
+        </button>
+
+        <button class="nav-item" data-route="pomodoro">
+          <span class="icon">⏱️</span>
+          <span>Pomodoro 25/5 (70/30)</span>
+        </button>
+
+        <button class="nav-item" data-route="credits">
+          <span class="icon">👥</span>
+          <span>Nhóm 7 - Đề tài</span>
+        </button>
+
+        <button class="nav-item" data-route="settings">
+          <span class="icon">⚙️</span>
+          <span>Cài đặt</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="lang-pill-btn" id="langSelectBtn">
+          <span>🌐 Đổi ngôn ngữ</span>
+          <span style="font-size: 11px; color: var(--primary);">Anh/Trung/Nhật/Hàn</span>
+        </button>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; padding: 4px 6px;">
+          <span style="font-size: 12px; font-weight: 600; color: var(--text-muted);">Giao diện tối</span>
+          <button class="btn-icon" id="themeToggleBtn" title="Chuyển chế độ sáng/tối" style="width: 34px; height: 34px;">
+            <span id="themeIcon">🌙</span>
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Viewport Area -->
+    <main class="app-main" id="mainContent">
+      <!-- Dynamic views will render here via app.js -->
+    </main>
+  </div>
+
+  <!-- Mobile Bottom Nav Bar -->
+  <nav class="mobile-bottom-nav">
+    <div class="bottom-nav-grid">
+      <button class="bottom-nav-item active" data-route="dashboard">
+        <span class="icon">🏠</span>
+        <span>Trang chủ</span>
+      </button>
+
+      <button class="bottom-nav-item" data-route="roadmap">
+        <span class="icon">🗺️</span>
+        <span>Lộ trình</span>
+      </button>
+
+      <button class="bottom-nav-item" data-route="flashcards">
+        <span class="icon">📇</span>
+        <span>Sổ thẻ</span>
+      </button>
+
+      <button class="bottom-nav-item" data-route="speaking">
+        <span class="icon">🎙️</span>
+        <span>Luyện nói</span>
+      </button>
+
+      <button class="bottom-nav-item" data-route="settings">
+        <span class="icon">⚙️</span>
+        <span>Cài đặt</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Application Logic Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Quick Mobile Event Bindings -->
+  <script>
+    document.getElementById('langSelectBtnMobile')?.addEventListener('click', () => {
+      App.openLanguageModal();
+    });
+    document.getElementById('themeToggleBtnMobile')?.addEventListener('click', () => {
+      App.toggleTheme();
+    });
+  </script>
+
+  <!-- Service Worker Registration for PWA / Offline -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
+  </script>
+</body>
+</html>
